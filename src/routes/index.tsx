@@ -1,29 +1,80 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/portfolio/Nav";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Services } from "@/components/portfolio/Services";
+import { Portfolio } from "@/components/portfolio/Portfolio";
+import { Workflow } from "@/components/portfolio/Workflow";
+import { WhyMe } from "@/components/portfolio/WhyMe";
+import { CTA } from "@/components/portfolio/CTA";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
+import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Lucas Gabriel | Video Editor" },
+      {
+        name: "description",
+        content:
+          "Professional YouTube Video Editor specializing in engaging long-form and short-form content that keeps audiences watching.",
+      },
+      { property: "og:title", content: "Lucas Gabriel | Video Editor" },
+      {
+        property: "og:description",
+        content:
+          "Professional YouTube Video Editor specializing in engaging long-form and short-form content that keeps audiences watching.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Lucas Gabriel | Video Editor" },
+      {
+        name: "twitter:description",
+        content:
+          "Professional YouTube Video Editor specializing in engaging long-form and short-form content that keeps audiences watching.",
+      },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Lucas Gabriel",
+          jobTitle: "Freelance YouTube Video Editor",
+          description:
+            "Professional YouTube Video Editor specializing in engaging long-form and short-form content.",
+          sameAs: [
+            "https://instagram.com/lucasgabriel.txr",
+            "https://x.com/lucasgabriel_ve",
+            "https://ytjobs.co/talent/profile/583654",
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useReveal();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Portfolio />
+        <Workflow />
+        <WhyMe />
+        <CTA />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
