@@ -1,5 +1,6 @@
-import { ArrowRight, Play, User } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { CinematicBackground } from "./CinematicBackground";
+import profileAsset from "@/assets/lucas-profile.png.asset.json";
 
 export function Hero() {
   return (
