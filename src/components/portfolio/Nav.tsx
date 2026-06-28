@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/lg-logo.jpg.asset.json";
+import logoImg from "@/assets/lg-logo.jpg";
 
 const links = [
   { href: "#about", label: "About" },
@@ -33,7 +33,7 @@ export function Nav() {
         <a href="#top" className="flex items-center gap-3 group" aria-label="Lucas Gabriel home">
           {/* Logo placeholder */}
           <div className="relative h-10 w-10 rounded-xl overflow-hidden shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
-            <img src={logoAsset.url} alt="Lucas Gabriel logo" className="h-full w-full object-cover" />
+            <img src={logoImg} alt="Lucas Gabriel logo" className="h-full w-full object-cover" />
             <span className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
           </div>
           <div className="hidden sm:block leading-tight">
