@@ -8,7 +8,6 @@ function DiscordIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-import { ArrowRight as _ArrowRight } from "lucide-react";
 import { CinematicBackground } from "./CinematicBackground";
 import profileAsset from "@/assets/lucas-profile.png.asset.json";
 
