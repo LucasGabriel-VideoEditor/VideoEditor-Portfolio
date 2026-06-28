@@ -86,7 +86,7 @@ export function Hero() {
           <div className="relative mx-auto w-full max-w-sm animate-fade-up [animation-delay:200ms]">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border/80 bg-card group">
               <img
-                src={profileAsset.url}
+                src={profileImg}
                 alt="Lucas Gabriel, freelance video editor"
                 loading="lazy"
                 decoding="async"
