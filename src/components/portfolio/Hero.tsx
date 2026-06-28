@@ -53,6 +53,15 @@ export function Hero() {
               >
                 Hire Me
               </a>
+              <a
+                href="https://discord.gg/gAW9VbPy93"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 backdrop-blur px-7 py-3.5 text-sm font-medium text-foreground transition-all hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_0_40px_-6px_oklch(0.55_0.24_295/0.9)] hover:-translate-y-0.5"
+              >
+                <DiscordIcon className="size-4" />
+                Join Discord
+              </a>
             </div>
 
             <div className="mt-14 grid grid-cols-3 gap-6 max-w-md">
