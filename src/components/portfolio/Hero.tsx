@@ -9,7 +9,7 @@ function DiscordIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 import { CinematicBackground } from "./CinematicBackground";
-import profileAsset from "@/assets/lucas-profile.png.asset.json";
+import profileImg from "@/assets/lucas-profile.png";
 
 export function Hero() {
   return (
