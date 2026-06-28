@@ -135,7 +135,7 @@ export function Portfolio() {
             </button>
             <iframe
               className="absolute inset-0 h-full w-full"
-              src={`https://www.youtube.com/embed/${activeId}?autoplay=1&rel=0`}
+              src={`https://www.youtube.com/embed/${activeId}?rel=0`}
               title="Project video"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
