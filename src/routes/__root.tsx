@@ -84,6 +84,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Lucas Gabriel" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Lucas Gabriel | Video Editor" },
+      { name: "twitter:title", content: "Lucas Gabriel | Video Editor" },
+      { property: "og:description", content: "Professional YouTube Video Editor specializing in engaging long-form and short-form content that keeps audiences watching." },
+      { name: "twitter:description", content: "Professional YouTube Video Editor specializing in engaging long-form and short-form content that keeps audiences watching." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2566024e-d865-41b1-b620-6752cdefebb5/id-preview-25455725--dfd76799-941b-449f-993b-73970f3b251e.lovable.app-1782661645472.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2566024e-d865-41b1-b620-6752cdefebb5/id-preview-25455725--dfd76799-941b-449f-993b-73970f3b251e.lovable.app-1782661645472.png" },
     ],
     links: [
       {
