@@ -1,5 +1,6 @@
-import { ArrowRight, Play, User } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { CinematicBackground } from "./CinematicBackground";
+import profileAsset from "@/assets/lucas-profile.png.asset.json";
 
 export function Hero() {
   return (
@@ -66,17 +67,15 @@ export function Hero() {
           {/* Profile picture placeholder */}
           <div className="relative mx-auto w-full max-w-sm animate-fade-up [animation-delay:200ms]">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border/80 bg-card group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-transparent" />
-              <div className="absolute inset-0 grid place-items-center">
-                <div className="text-center">
-                  <div className="mx-auto h-24 w-24 rounded-full gradient-purple grid place-items-center shadow-xl shadow-primary/40 animate-float">
-                    <User className="size-10 text-white" />
-                  </div>
-                  <div className="mt-5 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                    Profile Picture
-                  </div>
-                </div>
-              </div>
+              <img
+                src={profileAsset.url}
+                alt="Lucas Gabriel, freelance video editor"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover object-[50%_20%] animate-float"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.08_0_0/0.75),transparent_55%)] pointer-events-none" />
 
               {/* Play badge */}
               <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl border border-border/70 bg-background/70 backdrop-blur-xl p-4">
