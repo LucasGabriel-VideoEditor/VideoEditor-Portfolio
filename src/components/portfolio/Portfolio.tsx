@@ -17,9 +17,9 @@ const projects = [
   },
   {
     title: "Anime Reaction",
-    category: "Reaction",
-    duration: "Short",
-    youtubeId: "CDF0lBl5DUY",
+    category: "Entertainment, Reaction, Surprise",
+    duration: "Less than 1 minute",
+    youtubeId: "xdXzohF0Fyc",
   },
   {
     title: "Reaction Video",
