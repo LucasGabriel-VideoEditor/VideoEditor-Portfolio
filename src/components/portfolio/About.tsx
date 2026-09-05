@@ -1,31 +1,21 @@
 export function About() {
   return (
-    <section id="about" className="relative py-28 sm:py-36">
-      <div className="mx-auto max-w-5xl px-6 lg:px-10">
-        <div className="reveal">
-          <div className="text-xs uppercase tracking-[0.25em] text-primary-glow">
-            About Me
-          </div>
-          <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-balance text-gradient">
-            Editing built around pacing, story and retention.
-          </h2>
-        </div>
+    <section id="about" className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-3xl px-6 text-center">
+        <h2 className="reveal text-3xl sm:text-4xl font-semibold tracking-tight text-gradient">
+          About Me
+        </h2>
+        <p className="reveal mt-6 text-lg leading-relaxed text-muted-foreground">
+          I&apos;m 19 years old and I&apos;ve been working with video editing
+          for 3 years. I specialize in creating engaging and satisfying videos
+          for YouTube and social media.
+        </p>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-10 text-lg leading-relaxed text-muted-foreground reveal">
-          <p>
-            I&apos;m <span className="text-foreground font-medium">Lucas Gabriel</span>, a
-            freelance video editor focused on helping YouTube creators produce
-            content that is clean, engaging and satisfying to watch.
-          </p>
-          <p>
-            My editing style focuses on pacing, storytelling, visual clarity and
-            viewer retention. Whether it&apos;s long-form YouTube videos or
-            short-form content, my goal is always the same:{" "}
-            <span className="text-foreground font-medium">
-              make every second count.
-            </span>
-          </p>
-        </div>
+        {/* Reserved space for future YouTube channel artwork */}
+        <div
+          aria-hidden
+          className="reveal mt-16 h-48 sm:h-64 rounded-3xl border border-dashed border-border/50"
+        />
       </div>
     </section>
   );
