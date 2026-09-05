@@ -59,17 +59,13 @@ function Index() {
   useReveal();
   return (
     <div className="relative min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
-      <Nav />
       <main>
         <Hero />
-        <About />
-        <Services />
         <Portfolio />
-        <Workflow />
-        <WhyMe />
-        <CTA />
+        <About />
         <Contact />
       </main>
+
       <Footer />
     </div>
   );
