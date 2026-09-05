@@ -1,38 +1,5 @@
 import { Instagram, Mail, Briefcase } from "lucide-react";
 
-const links = [
-  {
-    label: "YTJobs",
-    href: "https://ytjobs.co/talent/profile/583654?r=77&t=tnp&utm_campaign=share-new-profile&utm_ref=talent",
-    icon: Briefcase,
-    handle: "ytjobs.co/talent",
-  },
-  {
-    label: "Join My Discord Community",
-    href: "https://discord.gg/gAW9VbPy93",
-    icon: DiscordIcon,
-    handle: "discord.gg/gAW9VbPy93",
-  },
-  {
-    label: "Instagram",
-    href: "https://instagram.com/lucasgabriel.txr",
-    icon: Instagram,
-    handle: "@lucasgabriel.txr",
-  },
-  {
-    label: "X",
-    href: "https://x.com/lucasgabriel_ve",
-    icon: XIcon,
-    handle: "@lucasgabriel_ve",
-  },
-  {
-    label: "Email",
-    href: "mailto:lucasgabrieltxr80@gmail.com",
-    icon: Mail,
-    handle: "lucasgabrieltxr80@gmail.com",
-  },
-];
-
 function DiscordIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
@@ -40,7 +7,6 @@ function DiscordIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
 
 function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -50,41 +16,56 @@ function XIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+const links = [
+  {
+    label: "Instagram",
+    href: "https://instagram.com/lucasgabriel.txr",
+    icon: Instagram,
+  },
+  { label: "X", href: "https://x.com/lucasgabriel_ve", icon: XIcon },
+  {
+    label: "YTJobs",
+    href: "https://ytjobs.co/talent/profile/583654?r=77&t=tnp&utm_campaign=share-new-profile&utm_ref=talent",
+    icon: Briefcase,
+  },
+  {
+    label: "Email",
+    href: "mailto:lucasgabrieltxr80@gmail.com",
+    icon: Mail,
+  },
+];
+
 export function Contact() {
   return (
-    <section id="contact" className="relative py-28 sm:py-36">
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <div className="max-w-2xl reveal">
-          <div className="text-xs uppercase tracking-[0.25em] text-primary-glow">
-            Contact
-          </div>
-          <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-gradient">
-            Let&apos;s get in touch.
-          </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
-            The fastest way to reach me — pick your favorite channel.
-          </p>
+    <section id="contact" className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-3xl px-6 text-center">
+        <h2 className="reveal text-3xl sm:text-4xl font-semibold tracking-tight text-gradient">
+          Let&apos;s Work Together
+        </h2>
+
+        <div className="reveal mt-10">
+          <a
+            href="https://discord.gg/gAW9VbPy93"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-9 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary-glow hover:-translate-y-0.5 hover:shadow-[0_0_45px_-8px_oklch(0.55_0.24_295/0.9)]"
+          >
+            <DiscordIcon className="size-4" />
+            Discord
+          </a>
         </div>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {links.map((l, i) => (
+        <div className="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
+          {links.map((l) => (
             <a
               key={l.label}
               href={l.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="reveal group relative flex items-center gap-4 rounded-2xl border border-border bg-card/60 backdrop-blur p-5 transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_0_45px_-10px_oklch(0.55_0.24_295/0.8)]"
-              style={{ transitionDelay: `${i * 70}ms` }}
+              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm text-muted-foreground transition-all hover:border-primary/60 hover:text-foreground"
             >
-              <div className="grid place-items-center h-12 w-12 rounded-xl bg-secondary border border-border group-hover:bg-primary group-hover:border-primary transition-colors">
-                <l.icon className="size-5" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-sm font-semibold">{l.label}</div>
-                <div className="text-xs text-muted-foreground truncate">
-                  {l.handle}
-                </div>
-              </div>
+              <l.icon className="size-4" />
+              {l.label}
             </a>
           ))}
         </div>

@@ -1,15 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
-import { Services } from "@/components/portfolio/Services";
 import { Portfolio } from "@/components/portfolio/Portfolio";
-import { Workflow } from "@/components/portfolio/Workflow";
-import { WhyMe } from "@/components/portfolio/WhyMe";
-import { CTA } from "@/components/portfolio/CTA";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { useReveal } from "@/hooks/use-reveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -63,17 +59,13 @@ function Index() {
   useReveal();
   return (
     <div className="relative min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
-      <Nav />
       <main>
         <Hero />
-        <About />
-        <Services />
         <Portfolio />
-        <Workflow />
-        <WhyMe />
-        <CTA />
+        <About />
         <Contact />
       </main>
+
       <Footer />
     </div>
   );
