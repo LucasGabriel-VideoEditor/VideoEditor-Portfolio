@@ -9,7 +9,7 @@ export function Hero() {
 
   return (
     <section id="top" className="relative px-6">
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center justify-center overflow-hidden rounded-3xl border border-border/60 bg-card/40 px-6 py-20 text-center sm:py-24">
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center justify-center overflow-hidden rounded-3xl border border-border bg-card/40 px-6 py-20 text-center sm:py-24">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-70"
