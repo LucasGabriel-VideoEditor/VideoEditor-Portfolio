@@ -59,7 +59,7 @@ function Index() {
   useReveal();
   return (
     <div className="relative min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
-      <main>
+      <main className="flex flex-col gap-6 py-6 sm:gap-8 sm:py-8">
         <Hero />
         <Portfolio />
         <About />
