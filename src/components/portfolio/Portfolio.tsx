@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Play } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Play, X } from "lucide-react";
 
 type Project = {
   title: string;
@@ -8,10 +8,6 @@ type Project = {
   youtubeId: string;
 };
 
-const PLACEHOLDER_LONGFORM_5 = "PLACEHOLDER_LONGFORM_5";
-const PLACEHOLDER_LONGFORM_6 = "PLACEHOLDER_LONGFORM_6";
-const PLACEHOLDER_SHORT_5 = "PLACEHOLDER_SHORT_5";
-
 const longFormProjects: Project[] = [
   {
     title: "Animal Kingdom Curiosities",
@@ -19,23 +15,13 @@ const longFormProjects: Project[] = [
     youtubeId: "eEXvcyshI4E",
   },
   { title: "Reaction Video", category: "Long-Form", youtubeId: "-c9M71Nj90U" },
-  {
-    title: "Long-Form Video 5",
-    category: "Long-Form",
-    youtubeId: PLACEHOLDER_LONGFORM_5,
-  },
-  {
-    title: "Long-Form Video 6",
-    category: "Long-Form",
-    youtubeId: PLACEHOLDER_LONGFORM_6,
-  },
 ];
 
 const shortProjects: Project[] = [
   { title: "Best CoC Equipment", category: "Short", youtubeId: "jq_GoJOR92Q" },
   { title: "Anime Reaction", category: "Short", youtubeId: "xdXzohF0Fyc" },
   { title: '"See What?"', category: "Short", youtubeId: "sSZvyPjR26s" },
-  { title: "Short 5", category: "Short", youtubeId: PLACEHOLDER_SHORT_5 },
+  { title: "Minecraft Challenge", category: "Short", youtubeId: "9SO7dsPN1Kg" },
 ];
 
 const isPlaceholder = (id: string) => id.startsWith("PLACEHOLDER_");
@@ -44,18 +30,19 @@ function VideoCard({
   title,
   youtubeId,
   vertical,
+  onOpen,
 }: {
   title: string;
   youtubeId: string;
   vertical?: boolean;
+  onOpen: (p: { title: string; youtubeId: string }) => void;
 }) {
-  const [playing, setPlaying] = useState(false);
   const ratio = vertical ? "aspect-[9/16]" : "aspect-video";
 
   if (isPlaceholder(youtubeId)) {
     return (
       <div
-        className={`reveal relative w-full overflow-hidden rounded-2xl border border-dashed border-border/60 bg-secondary/20 ${ratio}`}
+        className={`reveal relative w-full overflow-hidden rounded-2xl border border-dashed border-border bg-secondary/20 ${ratio}`}
       >
         <span className="absolute inset-0 grid place-items-center px-4 text-center text-xs sm:text-sm text-muted-foreground">
           {title} — coming soon
@@ -64,26 +51,9 @@ function VideoCard({
     );
   }
 
-  if (playing) {
-    return (
-      <div
-        className={`reveal relative w-full overflow-hidden rounded-2xl bg-secondary/30 ${ratio}`}
-      >
-        <iframe
-          className="absolute inset-0 h-full w-full"
-          src={`https://www.youtube.com/embed/${youtubeId}?rel=0&autoplay=1`}
-          title={title}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-    );
-  }
-
   return (
     <button
-      onClick={() => setPlaying(true)}
+      onClick={() => onOpen({ title, youtubeId })}
       aria-label={`Play ${title}`}
       className={`reveal group relative block w-full overflow-hidden rounded-2xl bg-secondary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_60px_-14px_oklch(0.55_0.24_295/0.8)] ${ratio}`}
     >
@@ -107,26 +77,84 @@ function VideoCard({
   );
 }
 
+function VideoModal({
+  project,
+  onClose,
+}: {
+  project: { title: string; youtubeId: string };
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={project.title}
+      onClick={onClose}
+      className="animate-fade-in fixed inset-0 z-50 grid place-items-center bg-background/85 px-4 py-10 backdrop-blur-sm"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-4xl"
+      >
+        <button
+          onClick={onClose}
+          aria-label="Close video"
+          className="absolute -top-12 right-0 inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
+        >
+          <X className="size-4" />
+          Close
+        </button>
+        <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-border bg-secondary/30">
+          <iframe
+            className="absolute inset-0 h-full w-full"
+            src={`https://www.youtube.com/embed/${project.youtubeId}?rel=0&autoplay=1`}
+            title={project.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Portfolio() {
+  const [active, setActive] = useState<{
+    title: string;
+    youtubeId: string;
+  } | null>(null);
+
   return (
     <section id="portfolio" className="relative px-6 scroll-mt-8">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-        <div className="rounded-3xl border border-border/60 bg-card/40 p-6 sm:p-8">
+      <div className="mx-auto flex max-w-4xl flex-col gap-6 sm:gap-8">
+        <div className="rounded-3xl border border-border bg-card/40 p-6 sm:p-8">
           <h2 className="reveal text-xs sm:text-sm uppercase tracking-[0.35em] text-primary-glow">
             Long-Form
           </h2>
           <div className="mt-8 flex flex-col gap-8">
             {longFormProjects.map((v) => (
-              <VideoCard key={v.title} title={v.title} youtubeId={v.youtubeId} />
+              <VideoCard
+                key={v.title}
+                title={v.title}
+                youtubeId={v.youtubeId}
+                onOpen={setActive}
+              />
             ))}
           </div>
         </div>
 
-        <div className="relative rounded-3xl border border-border/60 bg-card/40 p-6 sm:p-8">
-          <span
-            aria-hidden
-            className="pointer-events-none absolute -left-4 top-8 bottom-8 hidden w-px bg-border/60 lg:block"
-          />
+        <div className="rounded-3xl border border-border bg-card/40 p-6 sm:p-8">
           <h2 className="reveal text-xs sm:text-sm uppercase tracking-[0.35em] text-primary-glow">
             Shorts
           </h2>
@@ -137,11 +165,16 @@ export function Portfolio() {
                 title={v.title}
                 youtubeId={v.youtubeId}
                 vertical
+                onOpen={setActive}
               />
             ))}
           </div>
         </div>
       </div>
+
+      {active && (
+        <VideoModal project={active} onClose={() => setActive(null)} />
+      )}
     </section>
   );
 }

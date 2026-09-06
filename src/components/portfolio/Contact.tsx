@@ -38,7 +38,7 @@ const links = [
 export function Contact() {
   return (
     <section id="contact" className="relative px-6">
-      <div className="mx-auto max-w-3xl rounded-3xl border border-border/60 bg-card/40 px-6 py-16 text-center sm:py-20">
+      <div className="mx-auto max-w-3xl rounded-3xl border border-border bg-card/40 px-6 py-16 text-center sm:py-20">
         <h2 className="reveal text-3xl sm:text-4xl font-semibold tracking-tight text-gradient">
           Let&apos;s Work Together
         </h2>
