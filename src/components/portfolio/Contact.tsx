@@ -19,10 +19,10 @@ function XIcon(props: React.SVGProps<SVGSVGElement>) {
 const links = [
   {
     label: "Instagram",
-    href: "https://instagram.com/lucasgabriel.txr",
+    href: "https://www.instagram.com/lucasgabrieltxr?stkn=cjdzbmR4d2k4N2o4",
     icon: Instagram,
   },
-  { label: "X", href: "https://x.com/lucasgabriel_ve", icon: XIcon },
+  { label: "X", href: "https://x.com/lucasgabrieltxr", icon: XIcon },
   {
     label: "YTJobs",
     href: "https://ytjobs.co/talent/profile/583654?r=77&t=tnp&utm_campaign=share-new-profile&utm_ref=talent",
@@ -38,7 +38,7 @@ const links = [
 export function Contact() {
   return (
     <section id="contact" className="relative px-6">
-      <div className="mx-auto max-w-3xl rounded-3xl border border-border bg-card/40 px-6 py-16 text-center sm:py-20">
+      <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-card/40 px-6 py-16 text-center sm:py-20">
         <h2 className="reveal text-3xl sm:text-4xl font-semibold tracking-tight text-gradient">
           Let&apos;s Work Together
         </h2>
