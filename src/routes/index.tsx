@@ -4,6 +4,7 @@ import { About } from "@/components/portfolio/About";
 import { Portfolio } from "@/components/portfolio/Portfolio";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { Orbs } from "@/components/portfolio/Orbs";
 import { useReveal } from "@/hooks/use-reveal";
 
 
@@ -44,8 +45,8 @@ export const Route = createFileRoute("/")({
           description:
             "Professional YouTube Video Editor specializing in engaging long-form and short-form content.",
           sameAs: [
-            "https://instagram.com/lucasgabriel.txr",
-            "https://x.com/lucasgabriel_ve",
+            "https://www.instagram.com/lucasgabrieltxr",
+            "https://x.com/lucasgabrieltxr",
             "https://ytjobs.co/talent/profile/583654",
           ],
         }),
@@ -58,7 +59,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   useReveal();
   return (
-    <div className="relative min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
+    <div className="relative min-h-screen text-foreground antialiased overflow-x-hidden">
+      <Orbs />
       <main className="flex flex-col gap-6 py-6 sm:gap-8 sm:py-8">
         <Hero />
         <Portfolio />
