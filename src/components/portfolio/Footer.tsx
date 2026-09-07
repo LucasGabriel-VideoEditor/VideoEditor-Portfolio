@@ -14,7 +14,7 @@ export function Footer() {
 
   return (
     <footer className="px-6 pb-10 pt-6">
-      <div className="mx-auto max-w-3xl rounded-3xl border border-border bg-card/40 px-6 py-8">
+      <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-card/40 px-6 py-8">
         <nav className="flex flex-wrap items-center justify-center gap-3">
           {navItems.map((n) => (
             <button
