@@ -157,7 +157,7 @@ export function Portfolio() {
         </div>
 
         <div className="rounded-3xl border border-border bg-card/40 p-6 sm:p-8">
-          <h2 className="reveal text-xs sm:text-sm uppercase tracking-[0.35em] text-primary-glow">
+          <h2 className="reveal text-center text-xs sm:text-sm uppercase tracking-[0.35em] text-primary-glow">
             Shorts
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6">
