@@ -9,12 +9,14 @@ type Project = {
 };
 
 const longFormProjects: Project[] = [
+  { title: "Roblox", category: "Long-Form", youtubeId: "Rxq73ZNQ5rI" },
+  { title: "Anime Reaction", category: "Long-Form", youtubeId: "aGWZpMv3XT0" },
   {
     title: "Animal Kingdom Curiosities",
     category: "Long-Form",
     youtubeId: "eEXvcyshI4E",
   },
-  { title: "Reaction Video", category: "Long-Form", youtubeId: "-c9M71Nj90U" },
+  { title: "Music Reaction", category: "Long-Form", youtubeId: "-c9M71Nj90U" },
 ];
 
 const shortProjects: Project[] = [
