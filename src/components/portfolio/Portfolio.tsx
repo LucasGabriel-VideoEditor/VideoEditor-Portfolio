@@ -9,12 +9,14 @@ type Project = {
 };
 
 const longFormProjects: Project[] = [
+  { title: "Roblox", category: "Long-Form", youtubeId: "Rxq73ZNQ5rI" },
+  { title: "Anime Reaction", category: "Long-Form", youtubeId: "aGWZpMv3XT0" },
   {
     title: "Animal Kingdom Curiosities",
     category: "Long-Form",
     youtubeId: "eEXvcyshI4E",
   },
-  { title: "Reaction Video", category: "Long-Form", youtubeId: "-c9M71Nj90U" },
+  { title: "Music Reaction", category: "Long-Form", youtubeId: "-c9M71Nj90U" },
 ];
 
 const shortProjects: Project[] = [
@@ -139,7 +141,7 @@ export function Portfolio() {
     <section id="portfolio" className="relative px-6 scroll-mt-8">
       <div className="mx-auto flex max-w-4xl flex-col gap-6 sm:gap-8">
         <div className="rounded-3xl border border-border bg-card/40 p-6 sm:p-8">
-          <h2 className="reveal text-xs sm:text-sm uppercase tracking-[0.35em] text-primary-glow">
+          <h2 className="reveal text-center text-xs sm:text-sm uppercase tracking-[0.35em] text-primary-glow">
             Long-Form
           </h2>
           <div className="mt-8 flex flex-col gap-8">
@@ -155,7 +157,7 @@ export function Portfolio() {
         </div>
 
         <div className="rounded-3xl border border-border bg-card/40 p-6 sm:p-8">
-          <h2 className="reveal text-xs sm:text-sm uppercase tracking-[0.35em] text-primary-glow">
+          <h2 className="reveal text-center text-xs sm:text-sm uppercase tracking-[0.35em] text-primary-glow">
             Shorts
           </h2>
           <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6">
