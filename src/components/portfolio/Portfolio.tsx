@@ -147,7 +147,7 @@ export function Portfolio() {
           <div className="mt-8 flex flex-col gap-8">
             {longFormProjects.map((v) => (
               <VideoCard
-                key={v.title}
+                key={`${v.title}-${v.youtubeId}`}
                 title={v.title}
                 youtubeId={v.youtubeId}
                 onOpen={setActive}
