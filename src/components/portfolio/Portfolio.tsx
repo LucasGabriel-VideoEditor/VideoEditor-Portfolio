@@ -10,13 +10,13 @@ type Project = {
 
 const longFormProjects: Project[] = [
   { title: "Roblox", category: "Long-Form", youtubeId: "Rxq73ZNQ5rI" },
+  { title: "Roblox", category: "Long-Form", youtubeId: "9SE25Q1CDo4" },
   { title: "Anime Reaction", category: "Long-Form", youtubeId: "aGWZpMv3XT0" },
   {
     title: "Animal Kingdom Curiosities",
     category: "Long-Form",
     youtubeId: "eEXvcyshI4E",
   },
-  { title: "Music Reaction", category: "Long-Form", youtubeId: "-c9M71Nj90U" },
 ];
 
 const shortProjects: Project[] = [
@@ -147,7 +147,7 @@ export function Portfolio() {
           <div className="mt-8 flex flex-col gap-8">
             {longFormProjects.map((v) => (
               <VideoCard
-                key={v.title}
+                key={`${v.title}-${v.youtubeId}`}
                 title={v.title}
                 youtubeId={v.youtubeId}
                 onOpen={setActive}
