@@ -20,10 +20,10 @@ const longFormProjects: Project[] = [
 ];
 
 const shortProjects: Project[] = [
-  { title: "Best CoC Equipment", category: "Short", youtubeId: "jq_GoJOR92Q" },
-  { title: "Anime Reaction", category: "Short", youtubeId: "xdXzohF0Fyc" },
-  { title: '"See What?"', category: "Short", youtubeId: "sSZvyPjR26s" },
+  { title: "Evil Biome - Terraria", category: "Short", youtubeId: "pcxs9GaolwE" },
   { title: "Minecraft Challenge", category: "Short", youtubeId: "9SO7dsPN1Kg" },
+  { title: "Anime Reaction", category: "Short", youtubeId: "xdXzohF0Fyc" },
+  { title: "Best CoC Equipment", category: "Short", youtubeId: "jq_GoJOR92Q" },
 ];
 
 const isPlaceholder = (id: string) => id.startsWith("PLACEHOLDER_");
