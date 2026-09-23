@@ -15,13 +15,13 @@ const longFormProjects: Project[] = [
   {
     title: "Animal Kingdom Curiosities",
     category: "Long-Form",
-    youtubeId: "eEXvcyshI4E",
+    youtubeId: "bdoIy8y3GHk",
   },
 ];
 
 const shortProjects: Project[] = [
   { title: "Evil Biome - Terraria", category: "Short", youtubeId: "pcxs9GaolwE" },
-  { title: "Minecraft Challenge", category: "Short", youtubeId: "9SO7dsPN1Kg" },
+  { title: "Minecraft Challenge", category: "Short", youtubeId: "KHkdMALBRBE" },
   { title: "Anime Reaction", category: "Short", youtubeId: "xdXzohF0Fyc" },
   { title: "Best CoC Equipment", category: "Short", youtubeId: "jq_GoJOR92Q" },
 ];
